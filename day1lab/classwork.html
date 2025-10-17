@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <script>
+       var shirtNumber;
+       var shirtPrice;
+       var capNumber;
+       var capPrice;
+       shirtNumber = 5;
+       shirtPrice = 400;
+       capNumber = 3;
+       capPrice = 150;
+       var total = shirtNumber * shirtPrice + capNumber * capPrice;
+       document.getElementById("one").innerHTML = "Total price is " + total;
+       shirtPrice = 450;
+       total = shirtNumber * shirtPrice + capNumber * capPrice;
+       document.getElementById("two").innerHTML = "Updated total price is " + total;
+    </script>
+</body>
+</html>
