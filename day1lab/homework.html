@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shop Calculator</title>
+</head>
+<body>
+    <h1>Open Console</h1>
+    <script>
+       //declare and assign variables
+       var itemOneName, itemTwoName, itemThreeName;
+       var itemOnePrice, itemTwoPrice, itemThreePrice;
+       var itemOneQuantity, itemTwoQuantity, itemThreeQuantity;
+       var totalOne, totalTwo, totalThree, totalAll;
+       itemOneName = "rice";
+       itemTwoName = "sugar";
+       itemThreeName = "wheat";
+       itemOnePrice = 100;
+       itemTwoPrice = 50;
+       itemThreePrice = 80;
+       itemOneQuantity = 10;
+       itemTwoQuantity = 2;
+       itemThreeQuantity = 5;
+       //calculating cost
+       totalOne = itemOnePrice * itemOneQuantity;
+       totalTwo = itemTwoPrice * itemTwoQuantity;
+       totalThree = itemThreePrice * itemThreeQuantity;
+       totalAll = totalOne + totalTwo + totalThree;
+       //display bill
+       console.log("Cost of " + itemOneQuantity + "kg of " + itemOneName + " is " + totalOne);
+       console.log("Cost of " + itemTwoQuantity + "kg of " + itemTwoName + " is " + totalTwo);
+       console.log("Cost of " + itemThreeQuantity + "kg of " + itemThreeName + " is " + totalThree);
+       console.log("Total cost is " + totalAll);
+       //changing quantity of sugar
+       itemTwoQuantity = 1;
+       totalTwo = itemTwoPrice * itemTwoQuantity;
+       totalAll = totalOne + totalTwo + totalThree;
+       //display updated bill
+       console.log("Cost of " + itemOneQuantity + "kg of " + itemOneName + " is " + totalOne);
+       console.log("Cost of " + itemTwoQuantity + "kg of " + itemTwoName + " is " + totalTwo);
+       console.log("Cost of " + itemThreeQuantity + "kg of " + itemThreeName + " is " + totalThree);
+       console.log("Total cost is " + totalAll);
+    </script>
+</body>
+</html>
