@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework</title>
+    <title>Helper tool</title>
 </head>
 <body>
-    
+    <script>
+        const userProfile = {
+            username: "CoolUser99",
+            bio: "I LOVE coding! JavaScript is Great!!! "
+        };
+        function cleanUserBio(profile) {
+            const trimmedUsername = profile.username.trim();
+            const trimmedBio = profile.bio.trim();
+            const loweredUsername = trimmedUsername.toLowerCase();
+            const loweredBio = trimmedBio.toLowerCase();
+            const replacedBio = loweredBio.replace(/javascript/g, "JS");
+            let bioLength = replacedBio.length;
+            return {
+                username: loweredUsername,
+                bio: replacedBio,
+                bioLength: bioLength
+            }
+        }
+        console.log(cleanUserBio(userProfile));
+    </script>
 </body>
 </html>
