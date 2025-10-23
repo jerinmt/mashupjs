@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game result generator</title>
 </head>
 <body>
-    
+    <h1>Simple web game</h1>
+    <p id="difference"></p>
+    <p id="extremes"></p>
+    <script>
+        let mysteryLevel = Math.floor((Math.random() * 50) + 1);
+        let userInput = Number(prompt("Enter your input"));
+        let difference = Math.abs(mysteryLevel - userInput);
+        document.getElementById('difference').innerHTML = `The difference is ${difference}`;
+        let squareRoot = Math.sqrt(userInput);
+        console.log(`Square root of user's score is ${squareRoot}`);
+        console.log(`Value of Pi is ${Math.PI}`);
+        let product = "20" * 5;
+        document.getElementById('extremes').innerHTML = `Minimum value is ${Math.min(10, 20, mysteryLevel)} and maximum value is ${Math.max(10, 20, mysteryLevel)}`;
+    </script>
 </body>
 </html>
