@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Return Page</title>
+</head>
+<body>
+    <button type="button" onclick="clickEvent()">Click me</button>
+    <script>
+        function clickEvent() {
+            let order = {
+                itemName: 'Mobile cover',
+                isDelivered: true,
+                daysSinceDelivery: 10
+            };
+            console.log(order);
+            let result = (order.isDelivered==true)&&(order.daysSinceDelivery<=7)?"Eligible for Return":"Return Period Expired";
+            window.alert(result);
+            console.log("itemName" in order);
+            // document.write(nameStatus);
+            delete order.daysSinceDelivery;
+            console.log(order);
+        }
+    </script>
+</body>
+</html>
