@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Profile Page</title>
+</head>
+<body>
+    <button type="button" onclick="checkAccess()">Click me</button>
+    <script>
+        let profile = {
+                userName: 'Jerin Moni Thomas',
+                age: 32,
+                isAdmin: true
+            };
+        console.log(profile);
+        function checkAccess() {
+            let result = (profile.isAdmin==true)&&(profile.age>=18)?"Access granted":"Access Denied";
+            window.alert(result);
+            console.log("age" in profile);
+            delete profile.age;
+            console.log(profile);
+        }
+    </script>
+</body>
 </html>

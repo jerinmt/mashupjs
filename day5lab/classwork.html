@@ -18,7 +18,6 @@
             let result = (order.isDelivered==true)&&(order.daysSinceDelivery<=7)?"Eligible for Return":"Return Period Expired";
             window.alert(result);
             console.log("itemName" in order);
-            // document.write(nameStatus);
             delete order.daysSinceDelivery;
             console.log(order);
         }
