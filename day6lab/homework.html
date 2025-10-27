@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Result Dashboard</title>
 </head>
 <body>
-    
+    <h2>All students</h2>
+    <ul id="full"></ul>
+    <h2>Students scoring more than 60</h2>
+    <ul id="high"></ul>
+    <h2>Total score</h2>
+    <p id="total"></p>
+    <h2>Whether all pass(>35)?</h2>
+    <p id="allPass"></p>
+    <h2>Anyone scored more than 90?</h2>
+    <p id="topper"></p>
+    <h2>Descending scores list</h2>
+    <ul id="desc"></ul>
+    <script>
+        //student list
+        const studentList = [
+            {
+                name: 'April',
+                score: 53
+            },
+            {
+                name: 'August',
+                score: 70
+            },
+            {
+                name: 'July',
+                score: 68
+            },
+            {
+                name: 'June',
+                score: 25
+            },
+            {
+                name: 'March',
+                score: 34
+            },
+            {
+                name: 'May',
+                score: 92
+            }
+        ];
+        //display all students
+        let len = studentList.length;
+        let text = '';
+        for(let i =0; i < len; i++) {
+            text += `<li>${studentList[i].name}</li>`;
+        }
+        document.getElementById('full').innerHTML = text;
+        //new array of students with >60 scores
+        const filteredList = studentList.filter(selectFunction);
+        function selectFunction(value, index, array) {
+            return value.score > 60;
+        }
+        let len2 = filteredList.length;
+        text = '';
+        for(let i =0; i < len2; i++) {
+            text += `<li>${filteredList[i].name}</li>`;
+        }
+        document.getElementById('high').innerHTML = text;
+        //find total score
+        let scoreTotal = 0;
+        studentList.forEach(totalCounter);
+        function totalCounter(value, index, array) {
+            scoreTotal += value.score;    
+        }
+        document.getElementById('total').innerHTML = scoreTotal;
+        //whether all passed
+        let isAllPass = studentList.every(passCheck);
+        function passCheck(value, index, array) {
+            return value.score > 35;
+        }
+        document.getElementById('allPass').innerHTML = isAllPass;
+        //whether any scored >90
+        let isAnyTopper = studentList.some(topCheck);
+        function topCheck(value, index, array) {
+            return value.score > 90;
+        }
+        document.getElementById('topper').innerHTML = isAnyTopper;
+        //Students scores
+        studentList.sort(function(a, b){return a.score - b.score});
+        studentList.reverse();
+        text = '';
+        for(let i =0; i < len; i++) {
+            text += `<li>${studentList[i].name} - ${studentList[i].score}</li>`;
+        }
+        document.getElementById('desc').innerHTML = text;
+    </script>
 </body>
 </html>
