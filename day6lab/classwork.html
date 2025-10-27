@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <h2>Full list</h2>
+    <p id="first"></p>
+    <h2>More than 50 list</h2>
+    <p id="second"></p>
+    <h2>Updated list</h2>
+    <p id="third"></p>
+    <script>
+        const productList = ['Apple', 'Orange', 'Banana', 'Grapes', 'Pineapple'];
+        const priceList = [70, 60, 35, 90, 40];
+        const detailList =[];
+        let len = productList.length;
+        for(let i = 0; i < len; i++) {
+            detailList[i] = {
+                Product: productList[i],
+                Price: priceList[i]
+            };
+        }
+        let text = '<ul>';
+        for(let i =0; i < len; i++) {
+            text += `<li>Product: ${detailList[i].Product} - Price: ${detailList[i].Price}</li>`;
+        }
+        text += '</ul>';
+        document.getElementById('first').innerHTML = text;
+        const filteredList = detailList.filter(selectFunction);
+        function selectFunction(value, index, array) {
+            return value.Price > 50;
+        }
+        text = '<ul>';
+        len = filteredList.length;
+        for(let i =0; i < len; i++) {
+            text += `<li>Product: ${filteredList[i].Product} - Price: ${filteredList[i].Price}</li>`;
+        }
+        text += '</ul>';
+        document.getElementById('second').innerHTML = text;
+        detailList.push({
+            Product: 'Watermelon',
+            Price: 80
+        });
+        text = '<ul>';
+        len = detailList.length;
+        for(let i =0; i < len; i++) {
+            text += `<li>Product: ${detailList[i].Product} - Price: ${detailList[i].Price}</li>`;
+        }
+        text += '</ul>';
+        document.getElementById('third').innerHTML = text;
+    </script>
+</body>
+</html>
