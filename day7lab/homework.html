@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Reminder</title>
 </head>
 <body>
-    
+    <h2>The given date</h2>
+    <p id="givenDate"></p>
+    <h2>Number of full years since that day</h2>
+    <p id="passedYears"></p>
+    <h3>Message:</h3>
+    <p id="msg"></p>
+    <script>
+        let pastDate = prompt("Enter a past date in the format DD-MM-YYYY:");
+        let day = pastDate.slice(0,2);
+        let month = pastDate.slice(3,5);
+        let year = pastDate.slice(6);
+        let givenDate = new Date(year, month-1, day);
+        const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        let today = new Date();
+        let yearsPassed = (today-givenDate)/(1000 * 60 * 60 * 24 *365);
+        document.getElementById('givenDate').innerHTML = `${givenDate.getFullYear()} ${monthNames[givenDate.getMonth()]} ${givenDate.getDate()}`;
+        document.getElementById('passedYears').innerHTML = `${parseInt(yearsPassed)}`;
+        if(yearsPassed > 1) {
+            document.getElementById('msg').innerHTML = 'It has been more than a year since that date.';
+        } else {
+            document.getElementById('msg').innerHTML = 'It has been less than a year since that date.';
+        } 
+    </script>
 </body>
 </html>

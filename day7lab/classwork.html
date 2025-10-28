@@ -17,8 +17,8 @@
             let year = friend.birthday.slice(0,4);
             let month = friend.birthday.slice(5,7);
             let day = friend.birthday.slice(8);
-            let dob = new Date(year, month, day);
-            let monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let dob = new Date(year, month-1, day);
+            const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
             
             let today = new Date();
             let age = parseInt((today-dob)/(1000 * 60 * 60 * 24 *365));
