@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <h2>Birthday</h2>
+    <p id="dob"></p>
+    <script>
+        const friend = {
+            name: 'John',
+            birthday: '1999-06-05'
+        };
+        function getBirthdayDetails(friend) {
+            let year = friend.birthday.slice(0,4);
+            let month = friend.birthday.slice(5,7);
+            let day = friend.birthday.slice(8);
+            let dob = new Date(year, month, day);
+            let monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            
+            let today = new Date();
+            let age = parseInt((today-dob)/(1000 * 60 * 60 * 24 *365));
+
+            document.getElementById('dob').innerHTML = `${friend.name} was born on ${dob.getDate()} ${monthNames[dob.getMonth()]}, ${dob.getFullYear()} and is ${age} years old.`;
+        }
+        getBirthdayDetails(friend);
+    </script>
+</body>
+</html>
