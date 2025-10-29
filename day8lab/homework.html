@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess game</title>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <h2 id="result"></h2>
+    <script>
+        let chances = 5;
+        let words = ['One', 'Two', 'Three', 'Four', 'Five'];
+        let text = `Guess right. You have 5 chance(s). Enter your guess between numbers 1 and 5:`;
+        loopMain:
+        while(chances > 0) {
+            let input = Number(prompt(text));
+            switch(input) {
+                case 3:
+                    document.getElementById('heading').innerHTML = "!!You won!!";
+                    document.getElementById('result').innerHTML = `You entered '${words[input - 1]}'. You guessed it right!!!`;
+                break loopMain;
+                case 1:
+                case 2:
+                case 4:
+                case 5:
+                    text = `You entered '${words[input - 1]}'. Wrong guess. You have ${chances - 1} chance(s) left.`;
+                break;
+                default:
+                    text = `Invalid input. You have ${chances - 1} chance(s) left.`;
+                    continue;
+            }
+            chances--;
+        }
+        if(chances == 0) {
+            document.getElementById('heading').innerHTML = "!!GAME OVER!!";
+            document.getElementById('result').innerHTML = "You used all your chances";
+        }
+    </script>
+</body>
+</html>

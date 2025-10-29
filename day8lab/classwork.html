@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        const list = [];
+        let len = list.length;
+        let totalCost = 0;
+        while(len<5) {
+            let itemCode = parseInt(prompt("Enter the item code:"));
+            let itemQuantity = Number(prompt("Enter the quantity:"));
+            let itemName;
+            if(itemQuantity < 1) {
+                continue;
+            }
+            switch(itemCode) {
+                case 1:
+                    itemName = 'Apple';
+                    list[len] = itemQuantity * 30;
+                break;
+                case 2:
+                    itemName = 'Banana';
+                    list[len] = itemQuantity * 10;
+                break;
+                case 3:
+                    itemName = 'Mango';
+                    list[len] = itemQuantity * 50;
+                break;
+                default:
+                    continue;
+            }
+            document.write(`Item ${len + 1}: ${itemName} Qty: ${itemQuantity} Cost: ${list[len]} <br>`);
+            if(list[len] > 100) {
+                document.write("High purchase <br><br>" );
+            } else {
+                document.write("Normal purchase <br><br>");
+            }
+            len = list.length;
+        }
+        for(let i =0; i < len; i++) {
+            totalCost += list[i];
+        }
+        document.write(`Total: ${totalCost}`);
+    </script>
+</body>
+</html>
