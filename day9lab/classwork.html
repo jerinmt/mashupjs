@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="newText"></p>
+    <script>
+        let input = prompt("Enter the comment:");
+        document.getElementById('result').innerHTML = /[0-9]+/.test(input);
+        let output = input.replace(/[0-9]+/gi, "NUMBER");
+        document.getElementById('newText').innerHTML = output;
+    </script>
+</body>
+</html>
