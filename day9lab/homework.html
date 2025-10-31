@@ -15,9 +15,20 @@
             let output = input.replace(/(bad|ugly|stupid)/gi, "***");
             let numbers = output.match(/[0-9]+/g);
             let capitals = output.match(/\b[A-Z]/g);
+            let numLen, capLen;
+            if(numbers == null) {
+                numLen = 0;
+            } else {
+                numLen = numbers.length;
+            }
+            if(capitals == null) {
+                capLen = 0;
+            } else {
+                capLen = capitals.length;
+            }
             document.getElementById('comment').innerHTML = `Filtered comment: ${output}`;
-            document.getElementById('numCount').innerHTML = `Number count: ${numbers.length}`;
-            document.getElementById('capCount').innerHTML = `Capitalized count: ${capitals.length}`;
+            document.getElementById('numCount').innerHTML = `Number count: ${numLen}`;
+            document.getElementById('capCount').innerHTML = `Capitalized count: ${capLen}`;
         }
         commentFilter();
     </script>
