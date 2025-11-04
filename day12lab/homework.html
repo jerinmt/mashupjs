@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework</title>
+    <script src="homework.js"></script>
 </head>
 <body>
-    
+    <h1>Feedback</h1>
+    <form id="form1">
+        <label>Name:
+            <input type="text">
+        </label>
+        <label>Feedback:
+            <textarea rows="5" cols="10" placeholder="Enter your feedback"></textarea>
+        </label>
+        <button type="button" onclick="submitFeedback()">Submit</button>
+    </form>
+    <div onmouseover="mIn(this)" onmouseout="mOut(this)" style="width: fit-content;">
+        <h3 class="display"></h3>
+        <p class="display"></p>
+    </div>
+    <h2></h2>
 </body>
 </html>
