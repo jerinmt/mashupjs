@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let input = Number(prompt('Enter the number'));
+        if(input % 2 == 0) {
+            document.getElementById('display').innerHTML = 'The number is even';
+        } else {
+            document.getElementById('display').innerHTML = 'The number is odd';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert kilometers to miles</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let input = Number(prompt("Enter the kilometres"));
+        let output = input * 0.621371;
+        document.getElementById('display').innerHTML = `${input} kilometres is equal to ${output} miles`;
+    </script>
+</body>
+</html>

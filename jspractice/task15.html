@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let input = parseInt(prompt("Enter a number"));
+        if(input < 0) {
+            document.getElementById('display').innerHTML = "Negative numbers do not have factorial";
+        } else if(input == 0) {
+            document.getElementById('display').innerHTML = "Factorial is 1";
+        } else {
+            let output = 1;
+            for(let i = 1; i <= input; i++) {
+                output *= i;
+            }
+            document.getElementById('display').innerHTML = `Factorial is ${output}`;
+        }
+    </script>
+</body>
+</html>

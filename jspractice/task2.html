@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="first"></p>
+    <p id="second"></p>
+    <script>
+        let firstNum = 10;
+        let secondNum = 23;
+        let total = firstNum + secondNum;
+        document.getElementById('first').innerHTML = `Total of ${firstNum} and ${secondNum} is ${total}\n`;
+        firstNum = parseInt(prompt('Enter first number'));
+        secondNum = parseInt(prompt('Enter second number'));
+        total = firstNum + secondNum;
+        document.getElementById('second').innerHTML = `Total of new ${firstNum} and ${secondNum} is ${total}\n`;
+    </script>
+</body>
+</html>

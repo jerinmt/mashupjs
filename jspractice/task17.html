@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <button type="button" onclick="nTerms()">Upto n terms</button>
+    <button type="button" onclick="uptoN()">Upto n</button>
+    <button type="button" onclick="nthTerm()">nth term</button>
+    <p id="display"></p>
+    <script>
+        function nTerms() {
+            let n = parseInt(prompt("Enter the number"));
+            let first = 0;
+            let second = 1;
+            if(n < 1) {
+                document.getElementById('display').innerHTML = "Invalid number";
+            } else {
+                let output = `${first}`;
+                for(let i = 2; i <= n; i++) {
+                    output += `, ${second}`;
+                    let temp = first;
+                    first = second;
+                    second += temp; 
+                }
+                document.getElementById('display').innerHTML = output;
+            }
+        }
+        function uptoN() {
+            let n = parseInt(prompt("Enter the number"));
+            let first = 0;
+            let second = 1;
+            if(n < 1) {
+                document.getElementById('display').innerHTML = "Invalid number";
+            } else {
+                let output = `${first}`;
+                while(second <= n) {
+                    output += `, ${second}`;
+                    let temp = first;
+                    first = second;
+                    second += temp; 
+                }
+                document.getElementById('display').innerHTML = output;
+            }
+        }
+        function nthTerm() {
+            let n = parseInt(prompt("Enter the number"));
+            let first = 0;
+            let second = 1;
+            if(n < 1) {
+                document.getElementById('display').innerHTML = "Invalid number";
+            } else {
+                let output = `${first}`;
+                for(let i = 2; i <= n; i++) {
+                    output = `${second}`;
+                    let temp = first;
+                    first = second;
+                    second += temp; 
+                }
+                document.getElementById('display').innerHTML = output;
+            }
+        }
+    </script>
+</body>
+</html>

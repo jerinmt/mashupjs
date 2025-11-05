@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap variables</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('Enter first integer'));
+        let b = parseInt(prompt('Enter second integer'));
+        console.log(`a - ${a} b - ${b}`);
+        let temp = a;
+        a = b;
+        b = temp;
+        console.log(`Swapping using temporary variable: a - ${a} b - ${b}`);
+        [a, b] = [b, a];
+        console.log(`Swapping using destructuring: a - ${a} b - ${b}`);
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        console.log(`Swapping using operators: a - ${a} b - ${b}`);
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        console.log(`Swapping using bitwise XOR: a - ${a} b - ${b}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic equation</title>
+</head>
+<body>
+    <p>The solutions are:</p>
+    <p id="sol1"></p>
+    <p id="sol2"></p>
+    <script>
+        let a = Number(prompt('Enter the coefficient a(should not be 0)'));
+        let b = Number(prompt('Enter the coefficient b'));
+        let c = Number(prompt('Enter the constant c'));
+        let discriminant = b * b - 4 * a * c;
+        let root1, root2;
+        if(discriminant > 0) {
+            root1 = (-b + Math.sqrt(discriminant)) / 2 * a;
+            root2 = (-b - Math.sqrt(discriminant)) / 2 * a;
+        } else if(discriminant == 0) {
+            root1 = -b / 2 * a;
+            root2 = root1;
+        } else {
+            root1 = `${-b/2 * a} + ${(Math.sqrt(-discriminant)) / 2 * a}i`;
+            root2 = `${-b/2 * a} - ${(Math.sqrt(-discriminant)) / 2 * a}i`;
+        }
+        document.getElementById('sol1').innerHTML = root1;
+        document.getElementById('sol2').innerHTML = root2;
+    </script>
+</body>
+</html>

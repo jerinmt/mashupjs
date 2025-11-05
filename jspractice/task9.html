@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random numbers</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let firstNum = parseInt(prompt("Enter the lower limit"));
+        let secondNum = parseInt(prompt("Enter the higher limit"));
+        let output = Math.floor(Math.random() * (secondNum - firstNum + 1)) + firstNum;
+        document.getElementById('display').innerHTML = `A random number is ${output}`;
+    </script>
+</body>
+</html>

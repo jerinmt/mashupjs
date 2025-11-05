@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest of 3 numbers</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let first = Number(prompt('Enter the first number'));
+        let second = Number(prompt('Enter the second number'));
+        let third = Number(prompt('Enter the third number'));
+        if(first > second) {
+            if(first > third) {
+                document.getElementById('display').innerHTML = `${first} is the largest of the three`;
+            } else if(first == third) {
+                document.getElementById('display').innerHTML = `${first} & ${third} are equal`;
+            } else {
+                document.getElementById('display').innerHTML = `${third} is the largest of the three`;
+            }
+        } else if(first < second) {
+            if(second > third) {
+                document.getElementById('display').innerHTML = `${second} is the largest of the three`;
+            } else if(second == third) {
+                document.getElementById('display').innerHTML = `${second} & ${third} are equal`;
+            } else {
+                document.getElementById('display').innerHTML = `${third} is the largest of the three`;
+            }
+        } else {
+            if(first > third) {
+                document.getElementById('display').innerHTML = `${first} & ${second} are equal and largest of the three`;
+            } else if(first == third) {
+                document.getElementById('display').innerHTML = `${first}, ${second} & ${third} are equal`;
+            } else {
+                document.getElementById('display').innerHTML = `${third} is the largest of the three`;
+            }
+        }
+    </script>
+</body>
+</html>

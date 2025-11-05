@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of triangle</title>
+</head>
+<body>
+    <h2>Area with base and height</h2>
+    <p id="display1"></p>
+    <h2>Area with three sides</h2>
+    <p id="display2"></p>
+    <script>
+        let base = Number(prompt('Enter the base of the triangle'));
+        let height = Number(prompt('Enter the height of the triangle'));
+        let area1 = base * height / 2;
+        document.getElementById('display1').innerHTML = area1;
+        let side1 = Number(prompt('Enter the first side'));
+        let side2 = Number(prompt('Enter the second side'));
+        let side3 = Number(prompt('Enter the third side'));
+        let s = (side1 + side2 + side3) / 2;
+        area2 = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        document.getElementById('display2').innerHTML = area2;
+    </script>
+</body>
+</html>

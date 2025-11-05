@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime numbers in an interval</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let output = '';
+        let min = parseInt(prompt("Enter the first number"));
+        let max = parseInt(prompt("Enter the second number"));
+        for(let i = min; i <= max; i++) {
+            let j = 2;
+            let flag = true;
+            while(j < i && flag) {
+                if(i % j == 0) {
+                    flag = false;
+                }
+                j++;
+            }
+            if(i > 1 && flag==true) {
+                output += `${i}, `;
+            }
+        }
+        document.getElementById('display').innerHTML = `The prime numbers between ${min} and ${max} are ${output}`;
+    </script>
+</body>
+</html>
