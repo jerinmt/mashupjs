@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong numbers in an interval</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let min = parseInt(prompt("Enter lower limit"));
+        let max = parseInt(prompt("Enter upper limit"));
+        let digits;
+        let rem;
+        let len;
+        let sum;
+        let output = '';
+        for(let i = min; i <= max; i++) {
+            digits = [];
+            rem = i;
+            for(let j = 0; rem > 0; j++) {
+                digits[j] = rem % 10;
+                rem = (rem - digits[j]) / 10;
+            }
+            len = digits.length;
+            sum = 0;
+            for(let j = 0; j < len; j++) {
+                sum += digits[j] ** len;
+            }
+            if(sum == i) {
+                output += `${i} `;
+            }
+        }
+        if(output == '') {
+            document.getElementById('display').innerHTML = 'No Armstrong numbers in that interval';    
+        } else {
+            document.getElementById('display').innerHTML = output;
+        }
+        
+    </script>
+</body>
+</html>

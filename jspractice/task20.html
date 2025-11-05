@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let operation = prompt('Enter the operation: (+ for addition, - for subtraction, * for multiplication, / for division)');
+        let first = Number(prompt('Enter first number:'));
+        let second = Number(prompt('Enter second number:'));
+        let result;
+        switch(operation) {
+            case '+':
+                result = first + second;
+            break;
+            case '-':
+                result = first - second;
+            break;
+            case '*':
+                result = first * second;
+            break;
+            case '/':
+                result = first / second;
+            break;
+        }
+        document.getElementById('display').innerHTML = `${first} ${operation} ${second} = ${result}`;
+    </script>
+</body>
+</html>
