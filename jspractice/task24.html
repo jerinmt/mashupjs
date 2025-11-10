@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCM</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let first = parseInt(prompt("Enter first number"));
+        let second = parseInt(prompt("Enter second number"));
+        let lcm = first * second;
+        for(let i = lcm; i >= first && i >= second; i--) {
+            if(i % first == 0 && i % second == 0) {
+                lcm = i;
+            }
+        }
+        document.getElementById('display').innerHTML = `LCM of ${first} and ${second} is ${lcm}`;
+    </script>
+</body>
+</html>

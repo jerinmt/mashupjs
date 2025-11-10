@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let first = parseInt(prompt("Enter first number"));
+        let second = parseInt(prompt("Enter second number"));
+        let hcf = 1;
+        let i = 2;
+        while(i <= first && i <= second) {
+            if(first % i == 0 && second % i == 0) {
+                hcf = i;
+            }
+            i++;
+        }
+        document.getElementById('display').innerHTML = `The HCF/GCD of ${first} and ${second} is ${hcf}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check last digits</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        let first = parseInt(prompt('Enter the first number'));
+        let second = parseInt(prompt('Enter the second number'));
+        let third = parseInt(prompt('Enter the third number'));
+        let digit1 = first % 10;
+        let digit2 = second % 10;
+        let digit3 = third % 10;
+        if(digit1 == digit2 && digit2 == digit3) {
+            document.getElementById('The three numbers ${first}, ${second} and ${third} have same last digit');
+        } else {
+            document.getElementById('The three numbers all do not have same last digit');
+        }
+    </script>
+</body>
+</html>

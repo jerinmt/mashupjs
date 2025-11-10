@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of natural numbers using recursion</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        function sumUp(num) {
+            if(num == 1) {
+                return 1;
+            }
+            return sumUp(num - 1) + num;
+        }
+        let input = parseInt(prompt("Enter a natural number"));
+        let sum = sumUp(input);
+        document.getElementById('display').innerHTML = sum;
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    background-color: burlywood;
+    color: brown;
+}
+form {
+    margin: auto;
+    border: 3px solid burlywood;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 15px;
+}
+input,
+output {
+    border: 1px solid brown;
+    width: 200px;
+}
+select {
+    font-weight: bold;
+    padding-inline: 8px;
+}
+#result {
+    padding-inline: 80px;
+    font-weight: bold;
+}
+button {
+    padding-inline: 15px;
+    margin-top: 5px;
+}
+p {
+    height: 1rem;
+}
