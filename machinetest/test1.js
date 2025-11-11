@@ -31,6 +31,10 @@ function multiply(first, second) {
     printResult(result);
 }
 function divide(first, second) {
+    if(second == 0) {
+        window.alert('Not Possible to divide by zero');
+        return;
+    }
     let result = first / second;
     printResult(result);
 }
